@@ -1,0 +1,286 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 70px;
+    overflow: auto;
+    /* Prevent scrollbars */
+}
+
+.container {
+    /* max-width: 800px; */
+    margin: auto;
+}
+
+#map-container {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#map {
+    /* margin-top: 10vh; */
+    width: 95vw;
+    height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#pin-form {
+    display: none;
+    /* Existing styles */
+    margin-top: 15vh;
+    width: 90vw;
+    max-width: 450px;
+    position: absolute;
+    /* top: 20px;
+    left: 20px; */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#remove-pins {
+    display: none;
+    /* Existing styles */
+    margin-top: 15vh;
+    width: 90vw;
+    max-width: 450px;
+    position: absolute;
+    /* top: 20px;
+    left: 20px; */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#close-pin-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 10px;
+    color: #aaa;
+}
+
+/* #close-pin-form:hover {
+    color: #555;
+} */
+input[type=text] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 300px;
+    /* Adjust width as needed */
+    box-sizing: border-box;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-bottom {
+    padding: 10px 20px;
+    text-align: center;
+    max-width: 25vw;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-delete {
+    padding: 10px 20px;
+    text-align: center;
+    max-width: 25vw;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-save {
+    padding: 10px 20px;
+    text-align: center;
+    max-width: 25vw;
+    background-color: #00c003;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-delete:hover {
+    background-color: #ff3a3a;
+    color: #333;
+}
+
+.button-save:hover {
+    background-color: #31ff57;
+    color: #333;
+}
+
+.button-close:hover {
+    background-color: #6495ED;
+    color: #333;
+}
+
+.button-bottom:hover {
+    background-color: #6495ED;
+    color: #333;
+}
+
+.button-close {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-close:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.pin-form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="password"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+select {
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+    /* Adjust the value to control the roundness */
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Optional: styling the dropdown arrow */
+select::-ms-expand {
+    display: none;
+    /* Hides default dropdown arrow in IE */
+}
+
+/* button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+.inline-item {
+    display: flex;
+    align-items: center;
+    /* Vertically center-align items */
+    /* margin-bottom: 10px; Optional: add spacing between items */
+}
+
+.inline-item img {
+    margin-right: 8px;
+    /* Optional: add space between image and text */
+}
+
+/* Styling the clickable span */
+/* Styling the clickable span */
+.clickable-span {
+    margin-top: 70px;
+    color: #4CAF50;
+    /* Green color */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    /* Smooth color transition on hover */
+}
+
+.clickable-span:hover {
+    color: #2E8B57;
+    /* Darker green on hover */
+}
+
+/* Styling the hidden text */
+.hidden-text {
+    visibility: hidden;
+    position: absolute;
+    background-color: #f0f8ff;
+    /* Light blue background */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    /* Dark text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    /* Smooth fade and visibility change */
+}
+
+.show-text {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    /* Return the element to the normal layout flow */
+}
+
+.hide-text {
+    opacity: 0;
+}
